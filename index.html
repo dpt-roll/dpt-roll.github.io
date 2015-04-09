@@ -1,8 +1,89 @@
 <html>
 <head>
 <title>dpt roll</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #1E1E1E;
+}
+
+img {
+	width: 100%;
+}
+
+#box {
+	background-color: rgba(255, 0, 0, 0.5);
+}
+</style>
 </head>
 <body>
-<img src="fucking-image.png" alt="the roll">
+<img id="fucking-image" src="fucking-image.png" alt="the roll">
+<script>
+//hi. this is not fun.
+//fucking cancer roll posts
+//fuck you, whoever you people might be.
+
+//do you think I can be bothered to transcribe this shit? FUCK YOU.
+var fuckingImage = document.getElementById('fucking-image');
+fuckingImage.onload = function(fuck) {
+	
+
+	var random = Math.floor(Math.random() * 100); //(0-100]
+	//random = 4;
+	//highlight the fucking roll FUCK
+	var doubles = [19, 25, 36, 70, 77, 81, 86, 89, 91, 96, 99];
+	var width = 405;
+	var padWidth = 10;
+	var height = 20;
+	var padHeight = 2;
+
+	var x = 27;
+	var y = 100;
+	//easy way to do it, lots of duplication. FUCK YOU.
+	if(random < 40) {
+		for(var i = 0; i < random; i++) {
+			y += (height + padHeight);
+			if(doubles.indexOf(i) != -1) y += (height + padHeight); //x2!
+		}
+	} else if(random < 80) {
+		x += (width + padWidth);
+		for(var i = 40; i < random; i++) {
+			y += (height + padHeight);
+			if(doubles.indexOf(i) != -1) y += (height + padHeight); //x2!
+		}
+	} else if(random < 100) {
+		x += (width + padWidth) * 2;
+		for(var i = 80; i < random; i++) {
+			y += (height + padHeight);
+			if(doubles.indexOf(i) != -1) y += (height + padHeight); //x2!
+		}
+	}
+
+	var sY = fuckingImage.height / 1080;
+	var sX = fuckingImage.width / 1920;
+	
+	x *= sX;
+	y *= sY;
+	
+	//create box!
+	var box = document.createElement('div');
+	box.id = 'box';
+	box.style.width = width * sX;
+	var multiplier = doubles.indexOf(random) == -1 ? 1 : 2;
+	box.style.height = height * multiplier * sY;
+	box.style.position = 'absolute';
+	box.style.top = y;
+	box.style.left = x;
+
+	document.body.insertBefore(box, document.body.childNodes[0]);
+
+	console.log(random);
+}
+
+</script>
 </body>
 </html>
