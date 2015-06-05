@@ -1,2 +1,2 @@
 # dpt-roll.github.io
-the fucking roll image
+Superseded by https://better-dpt-roll.github.io
